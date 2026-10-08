@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Miracles: Act for Impact | Student-Led Initiative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #030712;
+            --bg-card: #0B132B;
+            --emerald-bright: #10B981;
+            --emerald-glow: rgba(16, 185, 129, 0.25);
+            --gold-glow: #FBBF24;
+            --soft-gold: #FDE68A;
+            --accent-red: #EF4444;
+            --text-light: #F9FAFB;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .starfield {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(white 1px, transparent 1px);
+            background-size: 60px 60px; opacity: 0.12; z-index: -1;
+        }
+        .glow-emerald { box-shadow: 0 0 25px var(--emerald-glow); }
+        .btn-base { transition: all 0.2s ease-in-out; }
+        .btn-base:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .btn-emerald { background-color: var(--emerald-bright); color: #030712; }
+        .tab-btn.active { border-color: var(--emerald-bright); color: var(--emerald-bright); font-weight: 700; background-color: rgba(16, 185, 129, 0.1); }
+        .strict-ban { border: 2px solid var(--accent-red); background-color: rgba(239, 68, 68, 0.08); }
+        .notice-card { border: 1px solid rgba(251, 191, 36, 0.3); background-color: rgba(251, 191, 36, 0.05); }
+        .insta-card { border: 1px solid rgba(236, 72, 153, 0.3); background-color: rgba(236, 72, 153, 0.05); }
+
+        /* Refined Subtle Halo Shimmer */
+        @keyframes shimmer-halo {
+            0% { filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4)); opacity: 0.9; }
+            50% { filter: drop-shadow(0 0 22px rgba(253, 230, 138, 0.8)); opacity: 1; }
+            100% { filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4)); opacity: 0.9; }
+        }
+        .angelic-halo { animation: shimmer-halo 3s infinite ease-in-out; }
+
+        @keyframes wing-float {
+            0%, 100% { transform: translateY(0px); filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.2)); }
+            50% { transform: translateY(-3px); filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.5)); }
+        }
+        .angelic-wings { animation: wing-float 4s infinite ease-in-out; }
+    </style>
+</head>
+<body class="relative min-h-screen">
+    <div class="starfield"></div>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-emerald-900/60 via-blue-900/60 to-emerald-900/60 border-b border-emerald-500/20 py-2.5 px-4 text-center text-xs md:text-sm font-medium text-emerald-200">
+        ✨ Open to EVERYONE ages 12+ — All career paths welcome! You do <span class="underline font-bold text-white">NOT</span> need to be pre-med to join.
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-[#030712]/90 sticky top-0 z-50 border-b border-white/10 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <!-- Refined Golden Wings & Halo Logo SVG (Navbar Version) -->
+                <svg class="w-11 h-11 flex-shrink-0" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="goldNavGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFE5A3"/>
+                            <stop offset="50%" stop-color="#D4AF37"/>
+                            <stop offset="100%" stop-color="#8A640F"/>
+                        </linearGradient>
+                        <radialGradient id="haloGlowNav" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+                            <stop offset="40%" stop-color="#FDE68A" stop-opacity="0.6"/>
+                            <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    
+                    <!-- Delicate Refined Ring Halo -->
+                    <g class="angelic-halo">
+                        <ellipse cx="150" cy="72" rx="72" ry="16" fill="url(#haloGlowNav)" />
+                        <ellipse cx="150" cy="72" rx="68" ry="14" fill="none" stroke="url(#goldNavGrad)" stroke-width="1.8"/>
+                        <ellipse cx="150" cy="72" rx="70" ry="15" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.8"/>
+                    </g>
+
+                    <!-- Elegant Sleek Feathered Wings -->
+                    <g class="angelic-wings" stroke="url(#goldNavGrad)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Left Wing Feathers -->
+                        <path d="M 142 135 C 115 105, 75 75, 30 110 C 15 122, 10 145, 22 170 C 38 205, 80 230, 120 215 C 135 205, 142 180, 140 135 Z" stroke-width="1.8" fill="rgba(212, 175, 55, 0.08)"/>
+                        <path d="M 130 125 C 98 102, 55 98, 30 135 M 134 145 C 98 128, 52 132, 28 170 M 136 165 C 104 152, 60 160, 38 200" stroke-width="1.2" opacity="0.9"/>
+                        <path d="M 125 115 C 90 92, 50 88, 25 125" stroke-width="1.5" stroke="#FFE5A3"/>
+
+                        <!-- Right Wing Feathers -->
+                        <path d="M 158 135 C 185 105, 225 75, 270 110 C 285 122, 290 145, 278 170 C 262 205, 220 230, 180 215 C 165 205, 158 180, 160 135 Z" stroke-width="1.8" fill="rgba(212, 175, 55, 0.08)"/>
+                        <path d="M 170 125 C 202 102, 245 98, 270 135 M 166 145 C 202 128, 248 132, 272 170 M 164 165 C 196 152, 240 160, 262 200" stroke-width="1.2" opacity="0.9"/>
+                        <path d="M 175 115 C 210 92, 250 88, 275 125" stroke-width="1.5" stroke="#FFE5A3"/>
+                    </g>
+                </svg>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white block leading-none">MedicalMiracles</span>
+                    <span class="text-[10px] tracking-widest text-emerald-400 font-bold uppercase">Act for Impact</span>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-8 text-sm text-gray-300 font-medium">
+                <a href="#mission" class="hover:text-emerald-400 transition-colors">Mission</a>
+                <a href="#beneficiaries" class="hover:text-emerald-400 transition-colors">Beneficiaries</a>
+                <a href="#wishlist" class="hover:text-emerald-400 transition-colors">Wishlist Simulator</a>
+                <a href="#bake-sales" class="hover:text-emerald-400 transition-colors">Bake Sales & Events</a>
+                <a href="#officers" class="hover:text-emerald-400 transition-colors">Officers</a>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUQw0W_ww3TPhffow2Itn3qg1eKHfSiVKWPuC8ZhBIutjETQ/viewform?usp=dialog" target="_blank" class="btn-base btn-emerald text-xs md:text-sm px-5 py-2.5 rounded-xl font-bold glow-emerald flex items-center gap-2">
+                Join Us (Ages 12+)
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="mission" class="py-16 md:py-24 px-6 max-w-5xl mx-auto text-center">
+        
+        <!-- Refined Golden Wings & Halo Logo (Hero Version) -->
+        <div class="relative inline-block mb-6">
+            <svg class="w-56 h-56 md:w-72 md:h-72 mx-auto filter drop-shadow-[0_0_30px_rgba(212,175,55,0.25)]" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#FFF3D1"/>
+                        <stop offset="30%" stop-color="#FFE5A3"/>
+                        <stop offset="65%" stop-color="#D4AF37"/>
+                        <stop offset="100%" stop-color="#8A640F"/>
+                    </linearGradient>
+
+                    <linearGradient id="goldFeatherFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255, 229, 163, 0.12)"/>
+                        <stop offset="100%" stop-color="rgba(138, 100, 15, 0.02)"/>
+                    </linearGradient>
+
+                    <radialGradient id="haloGlowHero" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+                        <stop offset="25%" stop-color="#FFF3D1" stop-opacity="0.8"/>
+                        <stop offset="60%" stop-color="#FBBF24" stop-opacity="0.35"/>
+                        <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+
+                <!-- Ethereal Metallic Halo Ring -->
+                <g class="angelic-halo">
+                    <ellipse cx="150" cy="65" rx="88" ry="20" fill="url(#haloGlowHero)" />
+                    <ellipse cx="150" cy="65" rx="82" ry="17" fill="none" stroke="url(#goldMetallic)" stroke-width="2"/>
+                    <ellipse cx="150" cy="65" rx="84" ry="18" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.85"/>
+                    <ellipse cx="150" cy="65" rx="88" ry="20" fill="none" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1"/>
+
+                    <!-- Delicate Diamond Sparkle Highlights -->
+                    <g fill="#FFFFFF" opacity="0.9">
+                        <polygon points="150,42 152,46 156,48 152,50 150,54 148,50 144,48 148,46"/>
+                        <polygon points="80,65 81,67 83,68 81,69 80,71 79,69 77,68 79,67" transform="scale(0.8) translate(20, 10)"/>
+                        <polygon points="220,65 221,67 223,68 221,69 220,71 219,69 217,68 219,67" transform="scale(0.8) translate(20, 10)"/>
+                    </g>
+                </g>
+
+                <!-- Sleek Layered Metallic Wings -->
+                <g class="angelic-wings" fill="url(#goldFeatherFill)" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Left Wing -->
+                    <path d="M 142 135 C 118 102, 72 68, 22 105 C 5 118, 0 148, 14 178 C 30 222, 75 250, 120 232 C 136 220, 144 188, 142 135 Z" stroke="url(#goldMetallic)" stroke-width="2.2"/>
+                    <!-- Feather Layer Details -->
+                    <path d="M 128 120 C 90 96, 45 90, 20 130" stroke="url(#goldMetallic)" stroke-width="1.5"/>
+                    <path d="M 132 142 C 90 122, 40 128, 18 170" stroke="url(#goldMetallic)" stroke-width="1.5"/>
+                    <path d="M 135 165 C 98 150, 50 158, 30 205" stroke="url(#goldMetallic)" stroke-width="1.2" opacity="0.8"/>
+                    <path d="M 134 185 C 102 176, 62 186, 46 220" stroke="url(#goldMetallic)" stroke-width="1" opacity="0.6"/>
+
+                    <!-- Right Wing -->
+                    <path d="M 158 135 C 182 102, 228 68, 278 105 C 295 118, 300 148, 286 178 C 270 222, 225 250, 180 232 C 164 220, 156 188, 158 135 Z" stroke="url(#goldMetallic)" stroke-width="2.2"/>
+                    <!-- Feather Layer Details -->
+                    <path d="M 172 120 C 210 96, 255 90, 280 130" stroke="url(#goldMetallic)" stroke-width="1.5"/>
+                    <path d="M 168 142 C 210 122, 260 12
