@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-light-blue: #E0F2FE; /* Sky light blue background */
+            --bg-light-blue: #E0F2FE;
             --bg-card: #FFFFFF;
-            --emerald-bright: #0284C7; /* Vibrant sky blue primary accent */
+            --emerald-bright: #0284C7;
             --emerald-glow: rgba(2, 132, 199, 0.25);
             --gold-glow: #D97706;
             --soft-gold: #B45309;
@@ -40,7 +40,6 @@
         .notice-card { border: 1px solid rgba(217, 119, 6, 0.3); background-color: rgba(254, 243, 199, 0.6); }
         .insta-card { border: 1px solid rgba(236, 72, 153, 0.3); background-color: rgba(252, 231, 243, 0.6); }
 
-        /* Refined Subtle Halo Shimmer */
         @keyframes shimmer-halo {
             0% { filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.4)); opacity: 0.9; }
             50% { filter: drop-shadow(0 0 22px rgba(245, 158, 11, 0.8)); opacity: 1; }
@@ -67,7 +66,6 @@
     <nav class="bg-white/80 sticky top-0 z-50 border-b border-sky-200/80 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
             <div class="flex items-center gap-3">
-                <!-- Refined Golden Wings & Halo Logo SVG (Navbar Version) -->
                 <svg class="w-11 h-11 flex-shrink-0" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="goldNavGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -117,8 +115,6 @@
 
     <!-- Hero Section -->
     <header id="mission" class="py-16 md:py-24 px-6 max-w-5xl mx-auto text-center">
-        
-        <!-- Refined Golden Wings & Halo Logo (Hero Version) -->
         <div class="relative inline-block mb-6">
             <svg class="w-56 h-56 md:w-72 md:h-72 mx-auto filter drop-shadow-[0_0_20px_rgba(217,119,6,0.2)]" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -239,7 +235,6 @@
 
     <!-- Important Announcements Block Grid -->
     <section class="max-w-6xl mx-auto px-6 py-6 mb-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Notice 1: Donation Drop-off Locations -->
         <div class="notice-card p-6 rounded-3xl flex flex-col justify-between shadow-sm">
             <div>
                 <div class="w-10 h-10 bg-amber-500/20 text-amber-700 rounded-xl flex items-center justify-center mb-4">
@@ -252,7 +247,6 @@
             </div>
         </div>
 
-        <!-- Notice 2: Social Media Launch (Instagram) -->
         <div class="insta-card p-6 rounded-3xl flex flex-col justify-between shadow-sm">
             <div>
                 <div class="w-10 h-10 bg-pink-500/20 text-pink-700 rounded-xl flex items-center justify-center mb-4">
@@ -265,7 +259,6 @@
             </div>
         </div>
 
-        <!-- Notice 3: Sanitation Policy -->
         <div class="strict-ban p-6 rounded-3xl flex flex-col justify-between shadow-sm">
             <div>
                 <div class="w-10 h-10 bg-red-500/20 text-red-700 rounded-xl flex items-center justify-center mb-4">
@@ -336,12 +329,28 @@
             <!-- RMHC Families Tab -->
             <div id="rmhc-wishlist" class="wishlist-content space-y-3 hidden">
                 <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
+                    <span class="font-medium text-slate-800 text-sm">Cozy Socks & Non-Skid Slipper Socks (Adult & Kids Sizes)</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-blue-200 text-blue-900 font-semibold">Brand New</span>
+                </div>
+                <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
+                    <span class="font-medium text-slate-800 text-sm">Adult Coloring Books, Word Search & Puzzle Books</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-blue-200 text-blue-900 font-semibold">Brand New</span>
+                </div>
+                <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
                     <span class="font-medium text-slate-800 text-sm">Phone Chargers (USB-C & Lightning Cords, Wall Bricks)</span>
                     <span class="text-xs px-3 py-1 rounded-full bg-blue-200 text-blue-900 font-semibold">Brand New & Original Packaging</span>
                 </div>
                 <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
                     <span class="font-medium text-slate-800 text-sm">Travel-Size Toiletries (Shampoo, Toothbrushes, Deodorant, Lotion)</span>
                     <span class="text-xs px-3 py-1 rounded-full bg-blue-200 text-blue-900 font-semibold">Brand New & Original Packaging</span>
+                </div>
+                <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
+                    <span class="font-medium text-slate-800 text-sm">Self-Care & Relaxation Items for Parents</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-blue-200 text-blue-900 font-semibold">Brand New & Original Packaging</span>
+                </div>
+                <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
+                    <span class="font-medium text-slate-800 text-sm">Pantry Snacks (Granola Bars, Goldfish, Fruit Snacks, Nuts)</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-blue-200 text-blue-900 font-semibold">Factory Sealed</span>
                 </div>
             </div>
         </div>
