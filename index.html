@@ -33,7 +33,6 @@
             background-image: radial-gradient(#0284C7 1px, transparent 1px);
             background-size: 60px 60px; opacity: 0.15; z-index: -1;
         }
-        .glow-emerald { box-shadow: 0 0 25px var(--emerald-glow); }
         .btn-base { transition: all 0.2s ease-in-out; }
         .btn-base:hover { transform: translateY(-2px); filter: brightness(1.05); }
         .btn-emerald { background-color: #0284C7; color: #FFFFFF; }
@@ -62,12 +61,12 @@
 <body class="relative min-h-screen pb-16">
     <div class="starfield"></div>
 
-    <!-- Top Announcement Bar -->
+    <!-- Announcement Bar -->
     <div class="bg-gradient-to-r from-sky-200 via-blue-100 to-sky-200 border-b border-sky-300/50 py-2.5 px-4 text-center text-xs md:text-sm font-semibold text-sky-900">
         ✨ Open to EVERYONE ages 12+ — All career paths welcome! You do <span class="underline font-bold text-sky-950">NOT</span> need to be pre-med to join.
     </div>
 
-    <!-- Main App Navigation Bar -->
+    <!-- Navigation Bar -->
     <nav class="bg-white/90 sticky top-0 z-50 border-b border-sky-200 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
             <div class="flex items-center gap-3">
@@ -106,6 +105,9 @@
                 <button onclick="showPage('dashboard')" class="main-tab dashboard active px-3.5 py-2 rounded-xl transition-all whitespace-nowrap border border-transparent">
                     👤 Member Dashboard
                 </button>
+                <button onclick="showPage('download')" class="main-tab download px-3.5 py-2 rounded-xl transition-all whitespace-nowrap border border-transparent bg-amber-100 text-amber-900 border-amber-300">
+                    📲 Download App
+                </button>
                 <button onclick="showPage('wishlist')" class="main-tab wishlist px-3.5 py-2 rounded-xl transition-all whitespace-nowrap border border-transparent">
                     🎁 Wishlists
                 </button>
@@ -122,9 +124,26 @@
         </div>
     </nav>
 
-    <!-- PAGE 1: MEMBER DASHBOARD (DEFAULT FIRST VIEW) -->
+    <!-- PAGE 1: MEMBER DASHBOARD (DEFAULT VIEW) -->
     <main id="page-dashboard" class="page-content max-w-5xl mx-auto px-6 py-8">
         
+        <!-- App Download Promo Banner -->
+        <div class="bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 text-white p-6 rounded-3xl shadow-lg mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0 backdrop-blur-sm">
+                    📱
+                </div>
+                <div>
+                    <span class="bg-amber-400 text-slate-900 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full tracking-wider">100% Free Mobile App</span>
+                    <h3 class="text-lg font-bold mt-1">Want to track your personal volunteer progress on the go?</h3>
+                    <p class="text-xs text-sky-100">Install the MedicalMiracles app directly to your phone's Home Screen in seconds!</p>
+                </div>
+            </div>
+            <button onclick="showPage('download')" class="btn-base bg-white text-sky-700 hover:bg-sky-50 font-bold text-xs px-5 py-3 rounded-xl shadow-md whitespace-nowrap flex-shrink-0">
+                How to Download →
+            </button>
+        </div>
+
         <!-- Member Welcome Card -->
         <div class="bg-white p-6 md:p-8 rounded-3xl border border-sky-200 shadow-sm mb-8">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-sky-100 pb-4 mb-6 gap-3">
@@ -157,7 +176,7 @@
             </div>
         </div>
 
-        <!-- Hero Mission Overview -->
+        <!-- Mission Overview -->
         <div class="bg-white p-8 rounded-3xl border border-sky-200 shadow-sm text-center mb-8">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold mb-4">
                 Student-Led Initiative Run by High Schoolers
@@ -171,7 +190,7 @@
             </a>
         </div>
 
-        <!-- Announcements Grid -->
+        <!-- Notices -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="notice-card p-6 rounded-3xl shadow-sm">
                 <h4 class="text-base font-bold text-amber-900 mb-2">📍 Drop-off Locations</h4>
@@ -196,7 +215,84 @@
         </div>
     </main>
 
-    <!-- PAGE 2: WISHLIST SIMULATOR (SEPARATE TAB PAGE) -->
+    <!-- PAGE 2: APP DOWNLOAD GUIDE -->
+    <main id="page-download" class="page-content max-w-4xl mx-auto px-6 py-8 hidden">
+        <div class="text-center mb-8">
+            <span class="text-xs font-bold uppercase tracking-widest text-sky-700">Free App Access</span>
+            <h2 class="text-3xl font-bold text-slate-900 mt-1">Download the MedicalMiracles App</h2>
+            <p class="text-slate-600 max-w-lg mx-auto mt-2 text-xs">
+                Keep track of your volunteer hours, event check-ins, and active wishlists right from your phone's Home Screen—no App Store download required!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- iPhone Instructions -->
+            <div class="bg-white p-6 md:p-8 rounded-3xl border border-sky-200 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl">📱</span>
+                        <span class="bg-slate-100 text-slate-800 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full border border-slate-200">iPhone / iPad (iOS)</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Install via Safari</h3>
+                    <ol class="space-y-3 text-xs text-slate-600 font-medium">
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-sky-100 text-sky-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">1</span>
+                            <span>Open <strong>Safari</strong> on your iPhone and go to our site.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-sky-100 text-sky-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">2</span>
+                            <span>Tap the <strong>Share</strong> button at the bottom of the screen (square with an up arrow).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-sky-100 text-sky-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">3</span>
+                            <span>Scroll down the menu and tap <strong>Add to Home Screen</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-sky-100 text-sky-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">4</span>
+                            <span>Tap <strong>Add</strong> in the top right corner. Done!</span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="mt-6 pt-4 border-t border-sky-100 text-[11px] text-sky-700 font-semibold text-center">
+                    ✓ Full screen app experience on iOS
+                </div>
+            </div>
+
+            <!-- Android Instructions -->
+            <div class="bg-white p-6 md:p-8 rounded-3xl border border-sky-200 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl">🤖</span>
+                        <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full border border-emerald-200">Android Devices</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Install via Chrome</h3>
+                    <ol class="space-y-3 text-xs text-slate-600 font-medium">
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-emerald-100 text-emerald-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">1</span>
+                            <span>Open <strong>Chrome</strong> on your phone and visit our site.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-emerald-100 text-emerald-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">2</span>
+                            <span>Tap the <strong>3 dots menu</strong> in the top-right corner.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-emerald-100 text-emerald-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">3</span>
+                            <span>Tap <strong>Install app</strong> or <strong>Add to Home screen</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-emerald-100 text-emerald-800 font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">4</span>
+                            <span>Confirm by tapping <strong>Install</strong>. Done!</span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="mt-6 pt-4 border-t border-emerald-100 text-[11px] text-emerald-700 font-semibold text-center">
+                    ✓ Fast 1-tap launcher icon on Android
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE 3: WISHLIST SIMULATOR -->
     <main id="page-wishlist" class="page-content max-w-5xl mx-auto px-6 py-8 hidden">
         <div class="text-center mb-8">
             <span class="text-xs font-bold uppercase tracking-widest text-sky-700">Interactive Wishlists</span>
@@ -205,7 +301,6 @@
         </div>
 
         <div class="bg-white p-6 md:p-8 rounded-3xl border border-sky-200 shadow-sm">
-            <!-- Wishlist Sub-Tabs -->
             <div class="flex flex-wrap border-b border-sky-200 mb-6 gap-2">
                 <button onclick="switchWishlistTab('children')" class="wishlist-tab children active px-4 py-2.5 rounded-t-xl text-xs font-semibold text-slate-500 transition-all">
                     🧸 Children's Wishlist (PCH)
@@ -218,7 +313,6 @@
                 </button>
             </div>
 
-            <!-- Children's Items -->
             <div id="children-wishlist" class="wishlist-subcontent space-y-3">
                 <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
                     <span class="font-medium text-slate-800 text-sm">LEGO Sets (non-violent, friendly themes)</span>
@@ -238,7 +332,6 @@
                 </div>
             </div>
 
-            <!-- Teens' Items -->
             <div id="teens-wishlist" class="wishlist-subcontent space-y-3 hidden">
                 <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
                     <span class="font-medium text-slate-800 text-sm">$10 / $25 Gift Cards (Target, Walmart, Starbucks, Gaming)</span>
@@ -250,7 +343,6 @@
                 </div>
             </div>
 
-            <!-- RMHC Items -->
             <div id="rmhc-wishlist" class="wishlist-subcontent space-y-3 hidden">
                 <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
                     <span class="font-medium text-slate-800 text-sm">Cozy Socks & Non-Skid Slipper Socks (Adult & Kids Sizes)</span>
@@ -276,7 +368,7 @@
         </div>
     </main>
 
-    <!-- PAGE 3: BENEFICIARIES -->
+    <!-- PAGE 4: BENEFICIARIES -->
     <main id="page-beneficiaries" class="page-content max-w-5xl mx-auto px-6 py-8 hidden">
         <div class="text-center mb-8">
             <span class="text-xs font-bold uppercase tracking-widest text-sky-700">Impact Partners</span>
@@ -312,7 +404,7 @@
         </div>
     </main>
 
-    <!-- PAGE 4: BAKE SALES & EVENTS -->
+    <!-- PAGE 5: BAKE SALES & EVENTS -->
     <main id="page-events" class="page-content max-w-5xl mx-auto px-6 py-8 hidden">
         <div class="bg-white p-8 rounded-3xl border border-sky-200 shadow-sm">
             <span class="text-xs font-bold uppercase tracking-widest text-sky-700">Community Outreach</span>
@@ -326,7 +418,7 @@
         </div>
     </main>
 
-    <!-- PAGE 5: OFFICERS -->
+    <!-- PAGE 6: OFFICERS -->
     <main id="page-officers" class="page-content max-w-5xl mx-auto px-6 py-8 hidden">
         <div class="bg-white p-8 rounded-3xl border border-sky-200 text-center shadow-sm max-w-lg mx-auto">
             <h2 class="text-2xl font-bold text-slate-900 mb-2">Officer Opportunities</h2>
@@ -339,20 +431,14 @@
         </div>
     </main>
 
-    <!-- App Navigation & Tab Switcher Script -->
     <script>
         function showPage(pageId) {
-            // Hide all pages
             document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
-            // Remove active style from navbar buttons
             document.querySelectorAll('.main-tab').forEach(b => b.classList.remove('active'));
             
-            // Show selected page
             document.getElementById('page-' + pageId).classList.remove('hidden');
-            // Highlight active navbar button
             document.querySelector('.main-tab.' + pageId).classList.add('active');
             
-            // Scroll back to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
