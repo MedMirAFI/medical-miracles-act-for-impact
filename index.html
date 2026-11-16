@@ -37,12 +37,18 @@
         .notice-card { border: 1px solid rgba(217, 119, 6, 0.3); background-color: rgba(254, 243, 199, 0.6); }
         .insta-card { border: 1px solid rgba(236, 72, 153, 0.3); background-color: rgba(252, 231, 243, 0.6); }
 
-        @keyframes shimmer-wreath {
-            0% { filter: drop-shadow(0 0 8px rgba(217, 119, 6, 0.4)); opacity: 0.95; }
-            50% { filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.8)); opacity: 1; }
-            100% { filter: drop-shadow(0 0 8px rgba(217, 119, 6, 0.4)); opacity: 0.95; }
+        @keyframes shimmer-halo {
+            0% { filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.4)); opacity: 0.9; }
+            50% { filter: drop-shadow(0 0 22px rgba(245, 158, 11, 0.8)); opacity: 1; }
+            100% { filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.4)); opacity: 0.9; }
         }
-        .apollo-wreath { animation: shimmer-wreath 3s infinite ease-in-out; }
+        .angelic-halo { animation: shimmer-halo 3s infinite ease-in-out; }
+
+        @keyframes wing-float {
+            0%, 100% { transform: translateY(0px); filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.2)); }
+            50% { transform: translateY(-3px); filter: drop-shadow(0 0 20px rgba(217, 119, 6, 0.4)); }
+        }
+        .angelic-wings { animation: wing-float 4s infinite ease-in-out; }
     </style>
 </head>
 <body class="relative min-h-screen">
@@ -57,24 +63,30 @@
     <header class="bg-white/95 sticky top-0 z-50 border-b border-sky-200 backdrop-blur-md shadow-sm w-full">
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-3">
-                <!-- Apollo Olive Branch & Cross Logo -->
-                <svg class="w-10 h-10 flex-shrink-0 apollo-wreath" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Gold Wings & Halo Logo -->
+                <svg class="w-10 h-10 flex-shrink-0" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="goldNavGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="#F59E0B"/>
-                            <stop offset="100%" stop-color="#B45309"/>
+                            <stop offset="50%" stop-color="#D97706"/>
+                            <stop offset="100%" stop-color="#92400E"/>
                         </linearGradient>
+                        <radialGradient id="haloGlowNav" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.95"/>
+                            <stop offset="40%" stop-color="#FBBF24" stop-opacity="0.6"/>
+                            <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+                        </radialGradient>
                     </defs>
-                    <path d="M 50 160 Q 30 110 50 60 Q 60 40 75 30" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round"/>
-                    <ellipse cx="45" cy="130" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(-30 45 130)"/>
-                    <ellipse cx="38" cy="95" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(-15 38 95)"/>
-                    <ellipse cx="45" cy="65" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(15 45 65)"/>
-                    <path d="M 150 160 Q 170 110 150 60 Q 140 40 125 30" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round"/>
-                    <ellipse cx="155" cy="130" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(30 155 130)"/>
-                    <ellipse cx="162" cy="95" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(15 162 95)"/>
-                    <ellipse cx="155" cy="65" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(-15 155 65)"/>
-                    <rect x="85" y="65" width="30" height="70" rx="6" fill="#0284C7"/>
-                    <rect x="65" y="85" width="70" height="30" rx="6" fill="#0284C7"/>
+                    <g class="angelic-halo">
+                        <ellipse cx="150" cy="72" rx="72" ry="16" fill="url(#haloGlowNav)" />
+                        <ellipse cx="150" cy="72" rx="68" ry="14" fill="none" stroke="url(#goldNavGrad)" stroke-width="1.8"/>
+                    </g>
+                    <g class="angelic-wings" stroke="url(#goldNavGrad)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M 142 135 C 115 105, 75 75, 30 110 C 15 122, 10 145, 22 170 C 38 205, 80 230, 120 215 C 135 205, 142 180, 140 135 Z" stroke-width="1.8" fill="rgba(217, 119, 6, 0.08)"/>
+                        <path d="M 130 125 C 98 102, 55 98, 30 135 M 134 145 C 98 128, 52 132, 28 170 M 136 165 C 104 152, 60 160, 38 200" stroke-width="1.2" opacity="0.9"/>
+                        <path d="M 158 135 C 185 105, 225 75, 270 110 C 285 122, 290 145, 278 170 C 262 205, 220 230, 180 215 C 165 205, 158 180, 160 135 Z" stroke-width="1.8" fill="rgba(217, 119, 6, 0.08)"/>
+                        <path d="M 170 125 C 202 102, 245 98, 270 135 M 166 145 C 202 128, 248 132, 272 170 M 164 165 C 196 152, 240 160, 262 200" stroke-width="1.2" opacity="0.9"/>
+                    </g>
                 </svg>
                 <div>
                     <span class="text-lg font-bold tracking-tight text-slate-900 block leading-none">MedicalMiracles</span>
@@ -101,17 +113,15 @@
         <!-- Hero Section -->
         <section id="mission" class="text-center pt-4 max-w-4xl mx-auto">
             <div class="flex justify-center mb-6">
-                <svg class="w-24 h-24 apollo-wreath" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 50 160 Q 30 110 50 60 Q 60 40 75 30" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round"/>
-                    <ellipse cx="45" cy="130" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(-30 45 130)"/>
-                    <ellipse cx="38" cy="95" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(-15 38 95)"/>
-                    <ellipse cx="45" cy="65" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(15 45 65)"/>
-                    <path d="M 150 160 Q 170 110 150 60 Q 140 40 125 30" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round"/>
-                    <ellipse cx="155" cy="130" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(30 155 130)"/>
-                    <ellipse cx="162" cy="95" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(15 162 95)"/>
-                    <ellipse cx="155" cy="65" rx="10" ry="6" fill="url(#goldGrad)" transform="rotate(-15 155 65)"/>
-                    <rect x="85" y="65" width="30" height="70" rx="6" fill="#0284C7"/>
-                    <rect x="65" y="85" width="70" height="30" rx="6" fill="#0284C7"/>
+                <svg class="w-48 h-24" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+                    <g class="angelic-halo">
+                        <ellipse cx="150" cy="30" rx="60" ry="12" fill="url(#haloGlowNav)" />
+                        <ellipse cx="150" cy="30" rx="56" ry="10" fill="none" stroke="url(#goldNavGrad)" stroke-width="1.8"/>
+                    </g>
+                    <g class="angelic-wings" stroke="url(#goldNavGrad)" fill="none">
+                        <path d="M 142 80 C 115 55, 75 35, 30 60 C 15 70, 10 90, 22 110 C 38 135, 80 155, 120 140 Z" stroke-width="1.8" fill="rgba(217, 119, 6, 0.08)"/>
+                        <path d="M 158 80 C 185 55, 225 35, 270 60 C 285 70, 290 90, 278 110 C 262 135, 220 155, 180 140 Z" stroke-width="1.8" fill="rgba(217, 119, 6, 0.08)"/>
+                    </g>
                 </svg>
             </div>
 
@@ -236,156 +246,4 @@
                     <button onclick="switchTab('teens')" class="tab-btn teens px-4 py-2.5 rounded-t-xl text-xs font-semibold text-slate-500 transition-all">
                         🎮 Teens' Wishlist (PCH)
                     </button>
-                    <button onclick="switchTab('rmhc')" class="tab-btn rmhc px-4 py-2.5 rounded-t-xl text-xs font-semibold text-slate-500 transition-all">
-                        🏠 Ronald McDonald House (Families)
-                    </button>
-                </div>
-
-                <!-- Children's Wishlist (PCH) -->
-                <div id="children-content" class="tab-content space-y-3">
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">LEGO Sets (non-violent, friendly themes)</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Multi-Pack Play-Doh (Sealed)</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Toddler Musical Toys & Light-Up Toys</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Barbie Doll Sets & Playsets</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                </div>
-
-                <!-- Teens' Wishlist (PCH) -->
-                <div id="teens-content" class="tab-content space-y-3 hidden">
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">$10 / $25 Gift Cards (Target, Walmart, Starbucks, Gaming)</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Adult Coloring Books (Clean Art) & Fine Gel Pens</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">High Quality Headphones & Charger Cords</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                </div>
-
-                <!-- Ronald McDonald House Wishlist (Families) -->
-                <div id="rmhc-content" class="tab-content space-y-3 hidden">
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Cozy Socks & Non-Skid Slipper Socks (Adult & Kids Sizes)</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Adult Coloring Books, Word Search & Puzzle Books</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Phone Chargers (USB-C & Lightning Cords, Wall Bricks)</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                    <div class="bg-sky-50/70 p-4 rounded-xl flex items-center justify-between border border-sky-200/60">
-                        <span class="font-medium text-slate-800 text-sm">Pantry Snacks (Granola Bars, Goldfish, Fruit Snacks, Nuts)</span>
-                        <span class="text-[11px] px-3 py-1 rounded-full bg-sky-200 text-sky-900 font-semibold">Brand New & Original Packaging</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bake Sales & Events -->
-        <section id="events" class="pt-8">
-            <div class="bg-white p-8 md:p-10 rounded-3xl border border-sky-200 shadow-sm">
-                <span class="text-xs font-bold uppercase tracking-widest text-sky-700 block mb-1">COMMUNITY ENGAGEMENT</span>
-                <h2 class="text-3xl font-bold text-slate-900 mb-3">Bake Sales & Local Public Drives</h2>
-                <p class="text-slate-600 text-xs md:text-sm leading-relaxed mb-6 max-w-3xl">
-                    Our initiative hosts neighborhood bake sales and drives in accessible, free public spaces such as local libraries and community centers. Members can actively participate in running bake sales, assembling CareKits, spreading awareness, and earning volunteer hours.
-                </p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUQw0W_ww3TPhffow2Itn3qg1eKHfSiVKWPuC8ZhBIutjETQ/viewform?usp=dialog" target="_blank" class="btn-base btn-emerald px-6 py-3 rounded-xl font-bold text-xs inline-flex items-center gap-2 mb-10">
-                    Sign Up as a Member to Help
-                </a>
-
-                <div class="border-t border-sky-100 pt-8">
-                    <div class="text-center text-xs font-semibold text-amber-700 mb-6">
-                        ✓ Brand New Initiative — Help Us Spread Awareness!
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                        <div class="p-6 rounded-2xl bg-sky-50/60">
-                            <div class="text-3xl font-extrabold text-slate-900">$0</div>
-                            <div class="text-[10px] font-bold uppercase text-sky-700 tracking-wider mt-1">RAISED FOR PATIENTS & FAMILIES</div>
-                        </div>
-                        <div class="p-6 rounded-2xl bg-sky-50/60">
-                            <div class="text-3xl font-extrabold text-slate-900">0</div>
-                            <div class="text-[10px] font-bold uppercase text-sky-700 tracking-wider mt-1">CAREKITS DONATED</div>
-                        </div>
-                        <div class="p-6 rounded-2xl bg-sky-50/60">
-                            <div class="text-3xl font-extrabold text-slate-900">0</div>
-                            <div class="text-[10px] font-bold uppercase text-sky-700 tracking-wider mt-1">VOLUNTEER HOURS LOGGED</div>
-                        </div>
-                    </div>
-
-                    <p class="text-center text-[11px] text-slate-500 mt-6">
-                        We are just starting our journey in 2026! Join us today to help us achieve our very first milestones and bring joy to young patients.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Officers Section -->
-        <section id="officers" class="pt-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-8 md:p-10 rounded-3xl border border-sky-200 shadow-sm">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-sky-700 block mb-1">LEADERSHIP TEAM</span>
-                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Officer Opportunities</h2>
-                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed mb-6">
-                        Officers organize our donation logistics, lead bake sale operations, and coordinate public drives. Becoming an officer is a fantastic leadership role for high schoolers dedicated to community service.
-                    </p>
-                    <div class="p-4 rounded-xl bg-sky-50 border border-sky-200 text-xs text-sky-900 font-medium">
-                        <strong>Requirement:</strong> High school members who actively participate for at least 1 full school year are eligible to apply for officer positions.
-                    </div>
-                </div>
-
-                <div class="bg-red-50/50 p-8 rounded-3xl border border-red-200 text-center">
-                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4">🔒</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">2026–2027 Officer Applications</h3>
-                    <span class="inline-block bg-red-100 text-red-800 text-[10px] font-bold uppercase px-3 py-1 rounded-full border border-red-200 mb-4">CURRENTLY CLOSED</span>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Officer applications for this school year are closed. They will reopen next school year exclusively for active members with 1+ year of participation.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-12 mt-20 text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h3 class="text-lg font-bold mb-2">Medical Miracles: Act for Impact</h3>
-            <p class="text-xs text-slate-400 max-w-xl mx-auto mb-6">
-                A student-led initiative open to everyone ages 12+ supporting hospitalized children, teens, and their families at Phoenix Children's Hospital and Ronald McDonald House.
-            </p>
-            <div class="text-[11px] text-slate-500 border-t border-slate-800 pt-6">
-                © 2026 Medical Miracles: Act for Impact. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function switchTab(type) {
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            
-            document.getElementById(type + '-content').classList.remove('hidden');
-            document.querySelector('.tab-btn.' + type).classList.add('active');
-        }
-    </script>
-</body>
-</html>
+                    <button onclick="switchTab('rmhc')" class="tab-btn rmhc px-4 py-2.5 rounded-t-xl text-xs font-semibold text-slate-500
